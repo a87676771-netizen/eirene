@@ -227,8 +227,20 @@ document.addEventListener('DOMContentLoaded', () => {
         src: 'images/suites/suite-2-chambre-fenetre-coffre.webp',
         caption: 'Suite 2 — Vue vers la fenêtre, télévision écran plat, climatisation et coffre en bois sculpté'
       }
+    3: [
+      {
+        src: 'images/suites/suite-3-chambre-faience-lit.webp',
+        caption: 'Suite 3 — Chambre avec grand lit, tête de lit en mosaïque artisanale, voûte blanche et rideaux jaunes'
+      },
+      {
+        src: 'images/suites/suite-3-chambre-arche-bureau.webp',
+        caption: 'Suite 3 — Espace chambre avec arche traditionnelle, bureau jaune et boiseries peintes'
+      },
+      {
+        src: 'images/suites/suite-3-salle-de-bain-turquoise.webp',
+        caption: 'Suite 3 — Salle de bain privative bleu turquoise, miroir en mosaïque, vasque artisanale et douche'
+      }
     ],
-    3: [],
     4: []
   };
 
