@@ -219,8 +219,10 @@ document.addEventListener('DOMContentLoaded', () => {
     4: []
   };
 
-  const btnSuitesDropdown = document.getElementById('btn-suites-dropdown');
-  const suitesDropdownMenu = document.getElementById('suites-dropdown-menu');
+  const btnSuitesToggle = document.getElementById('btn-suites-toggle');
+  const btnSuitesToggleText = document.getElementById('btn-suites-toggle-text');
+  const suitesShowroomPanel = document.getElementById('suites-showroom-panel');
+  const btnCloseShowroom = document.getElementById('btn-close-showroom');
 
   const showToast = (message) => {
     let toast = document.getElementById('site-toast');
@@ -238,29 +240,42 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 3500);
   };
 
-  if (btnSuitesDropdown && suitesDropdownMenu) {
-    const toggleDropdown = (show) => {
-      const isOpen = show !== undefined ? show : !suitesDropdownMenu.classList.contains('active');
-      suitesDropdownMenu.classList.toggle('active', isOpen);
-      btnSuitesDropdown.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  if (btnSuitesToggle && suitesShowroomPanel) {
+    const toggleShowroom = (show) => {
+      const isOpen = show !== undefined ? show : !suitesShowroomPanel.classList.contains('active');
+      suitesShowroomPanel.classList.toggle('active', isOpen);
+      btnSuitesToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      suitesShowroomPanel.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+
+      if (btnSuitesToggleText) {
+        btnSuitesToggleText.textContent = isOpen ? 'Fermer les 4 suites' : 'Découvrir nos 4 suites';
+      }
+
+      if (isOpen) {
+        setTimeout(() => {
+          suitesShowroomPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 150);
+      }
     };
 
-    btnSuitesDropdown.addEventListener('click', (e) => {
-      e.stopPropagation();
-      toggleDropdown();
+    btnSuitesToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      toggleShowroom();
     });
 
-    document.addEventListener('click', (e) => {
-      if (!btnSuitesDropdown.contains(e.target) && !suitesDropdownMenu.contains(e.target)) {
-        toggleDropdown(false);
-      }
-    });
+    if (btnCloseShowroom) {
+      btnCloseShowroom.addEventListener('click', (e) => {
+        e.preventDefault();
+        toggleShowroom(false);
+      });
+    }
 
-    suitesDropdownMenu.querySelectorAll('.suites-dropdown-item').forEach((item) => {
-      item.addEventListener('click', (e) => {
+    // Gestion des clics sur les cartes de suites
+    document.querySelectorAll('.suite-card, .btn-suite-action').forEach((element) => {
+      element.addEventListener('click', (e) => {
         e.stopPropagation();
-        const suiteId = item.getAttribute('data-suite');
-        toggleDropdown(false);
+        const suiteId = element.getAttribute('data-suite');
+        if (!suiteId) return;
 
         if (suitesData[suiteId] && suitesData[suiteId].length > 0) {
           openLightbox(0, suitesData[suiteId]);
