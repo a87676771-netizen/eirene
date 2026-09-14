@@ -25,7 +25,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Feuille de style principale -->
-  <link rel="stylesheet" href="style.css?v=20260914_8">
+  <link rel="stylesheet" href="style.css?v=20260914_9">
 
   <!-- Données Structurées SEO Local (JSON-LD) -->
   <script type="application/ld+json">
@@ -355,18 +355,50 @@
                 <span class="pill-badge">Intimité &amp; Charme</span>
                 <span class="pill-badge highlight">Petit-déjeuner inclus</span>
               </div>
-              <div class="suites-toggle-wrapper">
-                <button type="button" class="btn-suites-toggle" id="btn-suites-toggle" aria-expanded="false" aria-controls="suites-showroom-panel">
-                  <svg class="toggle-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <div class="suites-dropdown-wrapper">
+                <button type="button" class="btn-suites-dropdown" id="btn-suites-dropdown" aria-expanded="false" aria-controls="suites-dropdown-menu" aria-label="Découvrir nos 4 suites">
+                  <svg class="dropdown-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
                     <circle cx="8.5" cy="8.5" r="1.5"></circle>
                     <polyline points="21 15 16 10 5 21"></polyline>
                   </svg>
-                  <span id="btn-suites-toggle-text">Découvrir nos 4 suites</span>
-                  <svg class="toggle-chevron" viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true">
+                  <span id="btn-suites-dropdown-text">Découvrir nos 4 suites</span>
+                  <svg class="dropdown-chevron" viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true">
                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                   </svg>
                 </button>
+
+                <!-- LISTE DÉROULANTE DANS LE FLUX NATUREL (POUSSE 03 GRANDE VILLA AVEC GRAND ESPACE AÉRÉ) -->
+                <div class="suites-dropdown-menu" id="suites-dropdown-menu" role="menu" aria-label="Choisir une suite">
+                  <button type="button" class="suites-dropdown-item" data-suite="1" role="menuitem">
+                    <div class="suite-item-left">
+                      <span class="suite-item-name">Suite 1</span>
+                      <span class="suite-item-badge">4 photos HD</span>
+                    </div>
+                    <span class="suite-item-hint">Voir les photos &rarr;</span>
+                  </button>
+                  <button type="button" class="suites-dropdown-item" data-suite="2" role="menuitem">
+                    <div class="suite-item-left">
+                      <span class="suite-item-name">Suite 2</span>
+                      <span class="suite-item-badge coming-soon">Bientôt disponible</span>
+                    </div>
+                    <span class="suite-item-hint">&rarr;</span>
+                  </button>
+                  <button type="button" class="suites-dropdown-item" data-suite="3" role="menuitem">
+                    <div class="suite-item-left">
+                      <span class="suite-item-name">Suite 3</span>
+                      <span class="suite-item-badge coming-soon">Bientôt disponible</span>
+                    </div>
+                    <span class="suite-item-hint">&rarr;</span>
+                  </button>
+                  <button type="button" class="suites-dropdown-item" data-suite="4" role="menuitem">
+                    <div class="suite-item-left">
+                      <span class="suite-item-name">Suite 4</span>
+                      <span class="suite-item-badge coming-soon">Bientôt disponible</span>
+                    </div>
+                    <span class="suite-item-hint">&rarr;</span>
+                  </button>
+                </div>
               </div>
             </div>
             <div class="hebergement-col-pricing">
@@ -375,119 +407,6 @@
                 <span class="price-period">/ nuit</span>
               </div>
               <div class="price-detail">Petit-déjeuner inclus</div>
-            </div>
-
-            <!-- PANNEAU SHOWROOM 4 SUITES (PLEINE LARGEUR, GRAND ESPACE NATUREL) -->
-            <div class="suites-showroom-panel" id="suites-showroom-panel" aria-hidden="true">
-              <div class="showroom-header">
-                <div class="showroom-title-wrap">
-                  <span class="showroom-kicker">COLLECTION SUITES DE CHARME</span>
-                  <h4 class="showroom-title">Les 4 Suites de Maison Eirene</h4>
-                </div>
-                <button type="button" class="btn-close-showroom" id="btn-close-showroom" aria-label="Fermer le panneau des suites">
-                  <span>Fermer</span>
-                  <svg viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" stroke-width="2" fill="none" aria-hidden="true">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                  </svg>
-                </button>
-              </div>
-
-              <div class="suites-cards-grid">
-                <!-- Suite 1 Card -->
-                <div class="suite-card" data-suite="1">
-                  <div class="suite-card-media">
-                    <picture>
-                      <source srcset="images/suites/suite-1-chambre-lit-double.webp" type="image/webp">
-                      <img src="images/suites/suite-1-chambre-lit-double.jpg" alt="Suite 1 Maison Eirene — Lit double baldaquin et décor traditionnel" width="1024" height="682" loading="lazy" decoding="async">
-                    </picture>
-                    <span class="suite-photo-count">4 photos HD</span>
-                    <div class="suite-card-hover-overlay">
-                      <span class="btn-explore-suite">Agrandir les photos ↗</span>
-                    </div>
-                  </div>
-                  <div class="suite-card-body">
-                    <div class="suite-card-head">
-                      <h5 class="suite-card-name">Suite 1</h5>
-                      <span class="suite-card-status active">Disponible</span>
-                    </div>
-                    <p class="suite-card-desc">Chambre lumineuse, lit double baldaquin bleu et salle d’eau privative turquoise.</p>
-                    <button type="button" class="btn-suite-action" data-suite="1">
-                      <span>Voir les 4 photos</span>
-                      <svg viewBox="0 0 20 20" width="14" height="14" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                    </button>
-                  </div>
-                </div>
-
-                <!-- Suite 2 Card -->
-                <div class="suite-card suite-card-placeholder" data-suite="2">
-                  <div class="suite-card-media placeholder-media">
-                    <div class="placeholder-icon-wrap">
-                      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                      </svg>
-                    </div>
-                    <span class="suite-photo-count coming-soon">À venir</span>
-                  </div>
-                  <div class="suite-card-body">
-                    <div class="suite-card-head">
-                      <h5 class="suite-card-name">Suite 2</h5>
-                      <span class="suite-card-status soon">Bientôt en photo</span>
-                    </div>
-                    <p class="suite-card-desc">Confort raffiné, literie haut de gamme et atmosphère méditerranéenne chaleureuse.</p>
-                    <button type="button" class="btn-suite-action btn-disabled" data-suite="2">
-                      <span>Photos à venir</span>
-                    </button>
-                  </div>
-                </div>
-
-                <!-- Suite 3 Card -->
-                <div class="suite-card suite-card-placeholder" data-suite="3">
-                  <div class="suite-card-media placeholder-media">
-                    <div class="placeholder-icon-wrap">
-                      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                      </svg>
-                    </div>
-                    <span class="suite-photo-count coming-soon">À venir</span>
-                  </div>
-                  <div class="suite-card-body">
-                    <div class="suite-card-head">
-                      <h5 class="suite-card-name">Suite 3</h5>
-                      <span class="suite-card-status soon">Bientôt en photo</span>
-                    </div>
-                    <p class="suite-card-desc">Espace intime avec finitions artisanales et quiétude absolue pour votre séjour.</p>
-                    <button type="button" class="btn-suite-action btn-disabled" data-suite="3">
-                      <span>Photos à venir</span>
-                    </button>
-                  </div>
-                </div>
-
-                <!-- Suite 4 Card -->
-                <div class="suite-card suite-card-placeholder" data-suite="4">
-                  <div class="suite-card-media placeholder-media">
-                    <div class="placeholder-icon-wrap">
-                      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                      </svg>
-                    </div>
-                    <span class="suite-photo-count coming-soon">À venir</span>
-                  </div>
-                  <div class="suite-card-body">
-                    <div class="suite-card-head">
-                      <h5 class="suite-card-name">Suite 4</h5>
-                      <span class="suite-card-status soon">Bientôt en photo</span>
-                    </div>
-                    <p class="suite-card-desc">Cadre doux et lumineux, pensé pour une véritable parenthèse de sérénité à deux.</p>
-                    <button type="button" class="btn-suite-action btn-disabled" data-suite="4">
-                      <span>Photos à venir</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
             </div>
           </article>
 
@@ -1403,6 +1322,6 @@
 
 
   <!-- Script Vanilla JavaScript -->
-  <script src="script.js?v=20260914_8"></script>
+  <script src="script.js?v=20260914_9"></script>
 </body>
 </html>
