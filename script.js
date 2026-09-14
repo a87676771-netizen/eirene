@@ -227,6 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
         src: 'images/suites/suite-2-chambre-fenetre-coffre.webp',
         caption: 'Suite 2 — Vue vers la fenêtre, télévision écran plat, climatisation et coffre en bois sculpté'
       }
+    ],
     3: [
       {
         src: 'images/suites/suite-3-chambre-faience-lit.webp',
@@ -241,7 +242,20 @@ document.addEventListener('DOMContentLoaded', () => {
         caption: 'Suite 3 — Salle de bain privative bleu turquoise, miroir en mosaïque, vasque artisanale et douche'
       }
     ],
-    4: []
+    4: [
+      {
+        src: 'images/suites/suite-4-chambre-lit-baldaquin.webp',
+        caption: 'Suite 4 — Lit à baldaquin en fer forgé avec voilages blancs, rideaux traditionnels et atmosphère intime'
+      },
+      {
+        src: 'images/suites/suite-4-chambre-commode-voute.webp',
+        caption: 'Suite 4 — Perspective sous voûte blanche, commode artisanale peinte et porte bleue traditionnelle'
+      },
+      {
+        src: 'images/suites/suite-4-salle-de-bain-turquoise.webp',
+        caption: 'Suite 4 — Salle de bain privative tadelakt turquoise, miroir mosaïque et vasque artisanale'
+      }
+    ]
   };
 
   const btnSuitesDropdown = document.getElementById('btn-suites-dropdown');
