@@ -544,6 +544,7 @@ h1, h2, h3, h4, .serif-font {
   justify-content: center;
   overflow: hidden;
   padding: calc(var(--header-height) + 2rem) 0 4rem;
+  background-color: #161a1e;
 }
 
 .hero-media-wrapper {
@@ -2013,6 +2014,18 @@ h1, h2, h3, h4, .serif-font {
 .delay-1 { animation-delay: 0.15s; transition-delay: 0.15s; }
 .delay-2 { animation-delay: 0.3s; transition-delay: 0.3s; }
 .delay-3 { animation-delay: 0.45s; transition-delay: 0.45s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-up {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+  .hero-bg-img {
+    animation: none !important;
+    transform: none !important;
+  }
+}
 
 /* --- 22. RESPONSIVE DESIGN MULTI-BREAKPOINTS --- */
 
