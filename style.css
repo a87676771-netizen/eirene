@@ -541,6 +541,12 @@ h1, h2, h3, h4, .serif-font {
   z-index: 1;
 }
 
+.hero-media-wrapper picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .hero-bg-img {
   width: 100%;
   height: 100%;
@@ -837,6 +843,12 @@ h1, h2, h3, h4, .serif-font {
   width: 100%;
   aspect-ratio: 1 / 1;
   box-shadow: 0 16px 44px rgba(28, 27, 26, 0.08);
+}
+
+.visual-solo picture {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .visual-solo img {

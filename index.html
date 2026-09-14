@@ -25,7 +25,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Feuille de style principale -->
-  <link rel="stylesheet" href="style.css?v=20260914_3">
+  <link rel="stylesheet" href="style.css?v=20260914_4">
 
   <!-- Données Structurées SEO Local (JSON-LD) -->
   <script type="application/ld+json">
@@ -139,7 +139,10 @@
     <!-- ==================== 07. HERO SECTION ==================== -->
     <section class="hero-section" id="hero">
       <div class="hero-media-wrapper">
-        <img src="images/hero-maison-eirene.jpg" alt="Maison Eirene — Demeure d’exception avec coupole traditionnelle et jardin en Tunisie" class="hero-bg-img" width="1024" height="682" loading="eager" fetchpriority="high" decoding="async">
+        <picture>
+          <source srcset="images/hero-maison-eirene.webp" type="image/webp">
+          <img src="images/hero-maison-eirene.jpg" alt="Maison Eirene — Demeure d'exception avec coupole traditionnelle et jardin en Tunisie" class="hero-bg-img" width="1024" height="682" loading="eager" fetchpriority="high" decoding="async">
+        </picture>
         <div class="hero-overlay"></div>
       </div>
 
@@ -283,7 +286,10 @@
 
           <div class="maison-visuals-col reveal-on-scroll delay-1">
             <div class="visual-card visual-solo">
-              <img src="images/maison-eirene-architecture.jpg" alt="Maison Eirene — Architecture blanche, voûtes traditionnelles et bougainvilliers en fleurs" width="1024" height="1024" loading="lazy" decoding="async">
+              <picture>
+                <source srcset="images/maison-eirene-architecture.webp" type="image/webp">
+                <img src="images/maison-eirene-architecture.jpg" alt="Maison Eirene — Architecture blanche, voûtes traditionnelles et bougainvilliers en fleurs" width="1024" height="1024" loading="lazy" decoding="async">
+              </picture>
               <div class="visual-caption">
                 <span class="caption-tag">ARCHITECTURE &amp; SÉRÉNITÉ</span>
                 <span class="caption-text">Lignes épurées, voûtes traditionnelles et nature préservée</span>
@@ -681,7 +687,7 @@
           <div class="editorial-divider center"></div>
         </div>
 
-        <!-- Grille Masonry Éditoriale (15 photographies d'exception) -->
+        <!-- Grille Masonry Éditoriale (17 photographies d'exception) -->
         <div class="masonry-gallery" id="masonry-gallery">
           <!-- Item 1 : Piscine turquoise & bougainvilliers (Grand format) -->
           <div class="masonry-item item-span-2" data-category="piscine">
@@ -969,6 +975,44 @@
               </div>
             </a>
           </div>
+
+          <!-- Item 16 : Cuisine traditionnelle & îlot central -->
+          <div class="masonry-item" data-category="maison">
+            <a href="images/gallery/galerie-cuisine-ilot-central.webp" class="gallery-lightbox-trigger" data-index="15" data-caption="Grande cuisine traditionnelle avec îlot central vert olive, rideaux colorés et sol en faïence artisanale">
+              <picture>
+                <source srcset="images/gallery/galerie-cuisine-ilot-central.webp" type="image/webp">
+                <img src="images/gallery/galerie-cuisine-ilot-central.jpg" alt="Cuisine spacieuse avec îlot central vert olive, rideaux traditionnels et carrelage artisanal" width="1024" height="682" loading="lazy" decoding="async">
+              </picture>
+              <div class="gallery-item-overlay">
+                <span class="overlay-zoom-icon">
+                  <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="1.75" fill="none">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                </span>
+                <span class="overlay-caption">Cuisine &amp; îlot central</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Item 17 : Salle à manger & cuisine ouverte -->
+          <div class="masonry-item" data-category="maison">
+            <a href="images/gallery/galerie-salle-a-manger-cuisine.webp" class="gallery-lightbox-trigger" data-index="16" data-caption="Salle à manger conviviale avec grande table provençale, banquette en faïence et cuisine ouverte équipée">
+              <picture>
+                <source srcset="images/gallery/galerie-salle-a-manger-cuisine.webp" type="image/webp">
+                <img src="images/gallery/galerie-salle-a-manger-cuisine.jpg" alt="Salle à manger avec table provençale jaune, banquette en faïence et cuisine équipée" width="1024" height="682" loading="lazy" decoding="async">
+              </picture>
+              <div class="gallery-item-overlay">
+                <span class="overlay-zoom-icon">
+                  <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="1.75" fill="none">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                </span>
+                <span class="overlay-caption">Salle à manger &amp; cuisine ouverte</span>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -1230,6 +1274,6 @@
 
 
   <!-- Script Vanilla JavaScript -->
-  <script src="script.js?v=20260914_3"></script>
+  <script src="script.js?v=20260914_4"></script>
 </body>
 </html>
