@@ -1551,17 +1551,8 @@ h1, h2, h3, h4, .serif-font {
   100% { transform: scale(1); opacity: 1; }
 }
 
-.lightbox-caption-bar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin-top: 1rem;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 0.92rem;
-  font-weight: 300;
-}
-
+.lightbox-caption-bar,
+.lightbox-counter,
 .lightbox-caption-text,
 .lightbox-caption {
   display: none !important;

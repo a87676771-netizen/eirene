@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
     lightboxImg.src = data.src;
     lightboxImg.alt = data.caption || 'Maison Eirene';
     if (lightboxCaption) lightboxCaption.textContent = '';
-    lightboxCounter.textContent = `${index + 1} / ${currentLightboxDataset.length}`;
+    if (lightboxCounter) lightboxCounter.textContent = '';
   };
 
   const openLightbox = (index = 0, dataset = galleryData) => {
