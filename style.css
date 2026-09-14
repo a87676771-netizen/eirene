@@ -1439,12 +1439,11 @@ h1, h2, h3, h4, .serif-font {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, transparent 40%, rgba(20, 18, 16, 0.7) 100%);
+  background: rgba(14, 18, 22, 0.25);
   opacity: 0;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 1.5rem;
+  align-items: center;
+  justify-content: center;
   color: #FFFFFF;
   transition: opacity var(--transition-fast);
 }
@@ -1454,24 +1453,26 @@ h1, h2, h3, h4, .serif-font {
 }
 
 .overlay-zoom-icon {
-  position: absolute;
-  top: 1.25rem;
-  right: 1.25rem;
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.28);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #FFFFFF;
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.gallery-lightbox-trigger:hover .overlay-zoom-icon {
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 .overlay-caption {
-  font-size: 0.9rem;
-  font-weight: 300;
-  letter-spacing: 0.02em;
+  display: none !important;
 }
 
 /* --- LIGHTBOX MODAL --- */
@@ -1553,12 +1554,17 @@ h1, h2, h3, h4, .serif-font {
 .lightbox-caption-bar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
   margin-top: 1rem;
   color: rgba(255, 255, 255, 0.9);
   font-size: 0.92rem;
   font-weight: 300;
+}
+
+.lightbox-caption-text,
+.lightbox-caption {
+  display: none !important;
 }
 
 .lightbox-nav-btn {
