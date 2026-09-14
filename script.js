@@ -214,7 +214,20 @@ document.addEventListener('DOMContentLoaded', () => {
         caption: 'Suite 1 — Espace détente avec fauteuil à bascule en fer forgé bleu et décoration raffinée'
       }
     ],
-    2: [],
+    2: [
+      {
+        src: 'images/suites/suite-2-chambre-lit-double.webp',
+        caption: 'Suite 2 — Chambre traditionnelle avec grand lit double sur socle blanc, voûte et console artisanale'
+      },
+      {
+        src: 'images/suites/suite-2-salle-de-bain-jaune.webp',
+        caption: 'Suite 2 — Salle de bain privative aux tonalités chaleureuses, vasque artisanale et douche'
+      },
+      {
+        src: 'images/suites/suite-2-chambre-fenetre-coffre.webp',
+        caption: 'Suite 2 — Vue vers la fenêtre, télévision écran plat, climatisation et coffre en bois sculpté'
+      }
+    ],
     3: [],
     4: []
   };
