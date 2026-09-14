@@ -258,9 +258,41 @@ document.addEventListener('DOMContentLoaded', () => {
     ]
   };
 
+  // --- 7c. GESTION DU DROPDOWN 2 CHAMBRES & LIGHTBOX DÉDIÉE ---
+  const chambresData = {
+    1: [
+      {
+        src: 'images/chambres/chambre-1-porte-bleue-arche.webp',
+        caption: 'Chambre 1 — Perspective lumineuse vers la porte bleue traditionnelle, l’arche et les voilages artisanaux'
+      },
+      {
+        src: 'images/chambres/chambre-1-lit-double-tapis.webp',
+        caption: 'Chambre 1 — Grand lit double, tête de lit en nattage artisanal, banquette traditionnelle et tapis margoum'
+      }
+    ],
+    2: [
+      {
+        src: 'images/chambres/chambre-2-lit-fer-forge-applique.webp',
+        caption: 'Chambre 2 — Grand lit double en fer forgé artisanal, chevets lumineux et applique orientale ajourée'
+      },
+      {
+        src: 'images/chambres/chambre-2-chambre-rideaux-jaunes.webp',
+        caption: 'Chambre 2 — Chambre sous voûte blanche, lit fer forgé et fenêtres aux rideaux jaunes chaleureux'
+      },
+      {
+        src: 'images/chambres/chambre-2-commode-chaises-fer.webp',
+        caption: 'Chambre 2 — Vue d’ensemble avec commode traditionnelle peinte et chaises en fer forgé'
+      }
+    ]
+  };
+
   const btnSuitesDropdown = document.getElementById('btn-suites-dropdown');
   const btnSuitesDropdownText = document.getElementById('btn-suites-dropdown-text');
   const suitesDropdownMenu = document.getElementById('suites-dropdown-menu');
+
+  const btnChambresDropdown = document.getElementById('btn-chambres-dropdown');
+  const btnChambresDropdownText = document.getElementById('btn-chambres-dropdown-text');
+  const chambresDropdownMenu = document.getElementById('chambres-dropdown-menu');
 
   const showToast = (message) => {
     let toast = document.getElementById('site-toast');
@@ -278,6 +310,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 3500);
   };
 
+  let toggleChambresDropdown = null;
+
   if (btnSuitesDropdown && suitesDropdownMenu) {
     const toggleDropdown = (show) => {
       const isOpen = show !== undefined ? show : !suitesDropdownMenu.classList.contains('active');
@@ -286,6 +320,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (btnSuitesDropdownText) {
         btnSuitesDropdownText.textContent = isOpen ? 'Fermer la liste des suites' : 'Découvrir nos 4 suites';
+      }
+
+      if (isOpen && toggleChambresDropdown) {
+        toggleChambresDropdown(false);
       }
 
       if (isOpen) {
@@ -300,7 +338,6 @@ document.addEventListener('DOMContentLoaded', () => {
       toggleDropdown();
     });
 
-    // Clics sur les items de la liste
     suitesDropdownMenu.querySelectorAll('.suites-dropdown-item').forEach((item) => {
       item.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -313,6 +350,61 @@ document.addEventListener('DOMContentLoaded', () => {
           showToast(`Les photographies de la Suite ${suiteId} seront disponibles très prochainement.`);
         }
       });
+    });
+
+    document.addEventListener('click', () => {
+      if (suitesDropdownMenu.classList.contains('active')) {
+        toggleDropdown(false);
+      }
+    });
+  }
+
+  if (btnChambresDropdown && chambresDropdownMenu) {
+    toggleChambresDropdown = (show) => {
+      const isOpen = show !== undefined ? show : !chambresDropdownMenu.classList.contains('active');
+      chambresDropdownMenu.classList.toggle('active', isOpen);
+      btnChambresDropdown.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+      if (btnChambresDropdownText) {
+        btnChambresDropdownText.textContent = isOpen ? 'Fermer la liste des chambres' : 'Découvrir nos 2 chambres';
+      }
+
+      if (isOpen && suitesDropdownMenu && suitesDropdownMenu.classList.contains('active')) {
+        suitesDropdownMenu.classList.remove('active');
+        btnSuitesDropdown.setAttribute('aria-expanded', 'false');
+        if (btnSuitesDropdownText) btnSuitesDropdownText.textContent = 'Découvrir nos 4 suites';
+      }
+
+      if (isOpen) {
+        setTimeout(() => {
+          chambresDropdownMenu.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
+      }
+    };
+
+    btnChambresDropdown.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleChambresDropdown();
+    });
+
+    chambresDropdownMenu.querySelectorAll('.chambres-dropdown-item').forEach((item) => {
+      item.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const chambreId = item.getAttribute('data-chambre');
+        if (!chambreId) return;
+
+        if (chambresData[chambreId] && chambresData[chambreId].length > 0) {
+          openLightbox(0, chambresData[chambreId]);
+        } else {
+          showToast(`Les photographies de la Chambre ${chambreId} seront disponibles très prochainement.`);
+        }
+      });
+    });
+
+    document.addEventListener('click', () => {
+      if (chambresDropdownMenu.classList.contains('active')) {
+        toggleChambresDropdown(false);
+      }
     });
   }
 
