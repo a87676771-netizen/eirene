@@ -262,6 +262,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const chambresData = {
     1: [
       {
+        src: 'images/chambres/chambre-1-vue-ensemble-margoum.webp',
+        caption: 'Chambre 1 — Vue d’ensemble avec grand lit rouge, tapis margoum multicolore, poterie traditionnelle et voilages'
+      },
+      {
         src: 'images/chambres/chambre-1-porte-bleue-arche.webp',
         caption: 'Chambre 1 — Perspective lumineuse vers la porte bleue traditionnelle, l’arche et les voilages artisanaux'
       },
