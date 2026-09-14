@@ -149,18 +149,21 @@ document.addEventListener('DOMContentLoaded', () => {
     index: idx
   }));
 
+  let currentLightboxDataset = galleryData;
+
   const updateLightboxContent = (index) => {
-    if (!galleryData[index]) return;
+    if (!currentLightboxDataset[index]) return;
     currentGalleryIndex = index;
-    const data = galleryData[index];
+    const data = currentLightboxDataset[index];
 
     lightboxImg.src = data.src;
     lightboxImg.alt = data.caption;
     lightboxCaption.textContent = data.caption;
-    lightboxCounter.textContent = `${index + 1} / ${galleryData.length}`;
+    lightboxCounter.textContent = `${index + 1} / ${currentLightboxDataset.length}`;
   };
 
-  const openLightbox = (index) => {
+  const openLightbox = (index = 0, dataset = galleryData) => {
+    currentLightboxDataset = dataset;
     updateLightboxContent(index);
     lightboxModal.classList.add('active');
     lightboxModal.setAttribute('aria-hidden', 'false');
@@ -174,12 +177,12 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const showNextImage = () => {
-    const nextIndex = (currentGalleryIndex + 1) % galleryData.length;
+    const nextIndex = (currentGalleryIndex + 1) % currentLightboxDataset.length;
     updateLightboxContent(nextIndex);
   };
 
   const showPrevImage = () => {
-    const prevIndex = (currentGalleryIndex - 1 + galleryData.length) % galleryData.length;
+    const prevIndex = (currentGalleryIndex - 1 + currentLightboxDataset.length) % currentLightboxDataset.length;
     updateLightboxContent(prevIndex);
   };
 
@@ -187,9 +190,86 @@ document.addEventListener('DOMContentLoaded', () => {
   triggers.forEach((trigger, index) => {
     trigger.addEventListener('click', (e) => {
       e.preventDefault();
-      openLightbox(index);
+      openLightbox(index, galleryData);
     });
   });
+
+  // --- 7b. GESTION DU DROPDOWN 4 SUITES & LIGHTBOX DÉDIÉE (OPTION A) ---
+  const suitesData = {
+    1: [
+      {
+        src: 'images/suites/suite-1-chambre-lit-double.webp',
+        caption: 'Suite 1 — Chambre lumineuse avec grand lit, tête de lit baldaquin bleue et boiseries artisanales'
+      },
+      {
+        src: 'images/suites/suite-1-chambre-vue-baie.webp',
+        caption: 'Suite 1 — Perspective lumineuse vers la baie vitrée, voilages et télévision écran plat'
+      },
+      {
+        src: 'images/suites/suite-1-salle-de-bain-turquoise.webp',
+        caption: 'Suite 1 — Salle de bain privative bleu turquoise avec douche à l’italienne et vasque artisanale'
+      },
+      {
+        src: 'images/suites/suite-1-chambre-fauteuil-bascule.webp',
+        caption: 'Suite 1 — Espace détente avec fauteuil à bascule en fer forgé bleu et décoration raffinée'
+      }
+    ],
+    2: [],
+    3: [],
+    4: []
+  };
+
+  const btnSuitesDropdown = document.getElementById('btn-suites-dropdown');
+  const suitesDropdownMenu = document.getElementById('suites-dropdown-menu');
+
+  const showToast = (message) => {
+    let toast = document.getElementById('site-toast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'site-toast';
+      toast.className = 'site-toast';
+      document.body.appendChild(toast);
+    }
+    toast.textContent = message;
+    toast.classList.add('visible');
+    clearTimeout(toast._timeout);
+    toast._timeout = setTimeout(() => {
+      toast.classList.remove('visible');
+    }, 3500);
+  };
+
+  if (btnSuitesDropdown && suitesDropdownMenu) {
+    const toggleDropdown = (show) => {
+      const isOpen = show !== undefined ? show : !suitesDropdownMenu.classList.contains('active');
+      suitesDropdownMenu.classList.toggle('active', isOpen);
+      btnSuitesDropdown.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    };
+
+    btnSuitesDropdown.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleDropdown();
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!btnSuitesDropdown.contains(e.target) && !suitesDropdownMenu.contains(e.target)) {
+        toggleDropdown(false);
+      }
+    });
+
+    suitesDropdownMenu.querySelectorAll('.suites-dropdown-item').forEach((item) => {
+      item.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const suiteId = item.getAttribute('data-suite');
+        toggleDropdown(false);
+
+        if (suitesData[suiteId] && suitesData[suiteId].length > 0) {
+          openLightbox(0, suitesData[suiteId]);
+        } else {
+          showToast(`Les photographies de la Suite ${suiteId} seront disponibles très prochainement.`);
+        }
+      });
+    });
+  }
 
   if (lightboxCloseBtn) lightboxCloseBtn.addEventListener('click', closeLightbox);
   if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
