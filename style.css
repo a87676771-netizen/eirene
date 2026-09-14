@@ -1389,6 +1389,12 @@ h1, h2, h3, h4, .serif-font {
   position: relative;
 }
 
+.gallery-lightbox-trigger picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .gallery-lightbox-trigger img {
   width: 100%;
   height: 100%;
