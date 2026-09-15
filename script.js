@@ -198,61 +198,61 @@ document.addEventListener('DOMContentLoaded', () => {
   const suitesData = {
     1: [
       {
-        src: 'images/suites/suite-1-chambre-lit-double.webp',
+        src: 'assets/suites/suite-1-chambre-lit-double.webp',
         caption: 'Suite 1 — Chambre lumineuse avec grand lit, tête de lit baldaquin bleue et boiseries artisanales'
       },
       {
-        src: 'images/suites/suite-1-chambre-vue-baie.webp',
+        src: 'assets/suites/suite-1-chambre-vue-baie.webp',
         caption: 'Suite 1 — Perspective lumineuse vers la baie vitrée, voilages et télévision écran plat'
       },
       {
-        src: 'images/suites/suite-1-salle-de-bain-turquoise.webp',
+        src: 'assets/suites/suite-1-salle-de-bain-turquoise.webp',
         caption: 'Suite 1 — Salle de bain privative bleu turquoise avec douche à l’italienne et vasque artisanale'
       },
       {
-        src: 'images/suites/suite-1-chambre-fauteuil-bascule.webp',
+        src: 'assets/suites/suite-1-chambre-fauteuil-bascule.webp',
         caption: 'Suite 1 — Espace détente avec fauteuil à bascule en fer forgé bleu et décoration raffinée'
       }
     ],
     2: [
       {
-        src: 'images/suites/suite-2-chambre-lit-double.webp',
+        src: 'assets/suites/suite-2-chambre-lit-double.webp',
         caption: 'Suite 2 — Chambre traditionnelle avec grand lit double sur socle blanc, voûte et console artisanale'
       },
       {
-        src: 'images/suites/suite-2-salle-de-bain-jaune.webp',
+        src: 'assets/suites/suite-2-salle-de-bain-jaune.webp',
         caption: 'Suite 2 — Salle de bain privative aux tonalités chaleureuses, vasque artisanale et douche'
       },
       {
-        src: 'images/suites/suite-2-chambre-fenetre-coffre.webp',
+        src: 'assets/suites/suite-2-chambre-fenetre-coffre.webp',
         caption: 'Suite 2 — Vue vers la fenêtre, télévision écran plat, climatisation et coffre en bois sculpté'
       }
     ],
     3: [
       {
-        src: 'images/suites/suite-3-chambre-faience-lit.webp',
+        src: 'assets/suites/suite-3-chambre-faience-lit.webp',
         caption: 'Suite 3 — Chambre avec grand lit, tête de lit en mosaïque artisanale, voûte blanche et rideaux jaunes'
       },
       {
-        src: 'images/suites/suite-3-chambre-arche-bureau.webp',
+        src: 'assets/suites/suite-3-chambre-arche-bureau.webp',
         caption: 'Suite 3 — Espace chambre avec arche traditionnelle, bureau jaune et boiseries peintes'
       },
       {
-        src: 'images/suites/suite-3-salle-de-bain-turquoise.webp',
+        src: 'assets/suites/suite-3-salle-de-bain-turquoise.webp',
         caption: 'Suite 3 — Salle de bain privative bleu turquoise, miroir en mosaïque, vasque artisanale et douche'
       }
     ],
     4: [
       {
-        src: 'images/suites/suite-4-chambre-lit-baldaquin.webp',
+        src: 'assets/suites/suite-4-chambre-lit-baldaquin.webp',
         caption: 'Suite 4 — Lit à baldaquin en fer forgé avec voilages blancs, rideaux traditionnels et atmosphère intime'
       },
       {
-        src: 'images/suites/suite-4-chambre-commode-voute.webp',
+        src: 'assets/suites/suite-4-chambre-commode-voute.webp',
         caption: 'Suite 4 — Perspective sous voûte blanche, commode artisanale peinte et porte bleue traditionnelle'
       },
       {
-        src: 'images/suites/suite-4-salle-de-bain-turquoise.webp',
+        src: 'assets/suites/suite-4-salle-de-bain-turquoise.webp',
         caption: 'Suite 4 — Salle de bain privative tadelakt turquoise, miroir mosaïque et vasque artisanale'
       }
     ]
@@ -262,29 +262,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const chambresData = {
     1: [
       {
-        src: 'images/chambres/chambre-1-vue-ensemble-margoum.webp',
+        src: 'assets/chambres/chambre-1-vue-ensemble-margoum.webp',
         caption: 'Chambre 1 — Vue d’ensemble avec grand lit rouge, tapis margoum multicolore, poterie traditionnelle et voilages'
       },
       {
-        src: 'images/chambres/chambre-1-porte-bleue-arche.webp',
+        src: 'assets/chambres/chambre-1-porte-bleue-arche.webp',
         caption: 'Chambre 1 — Perspective lumineuse vers la porte bleue traditionnelle, l’arche et les voilages artisanaux'
       },
       {
-        src: 'images/chambres/chambre-1-lit-double-tapis.webp',
+        src: 'assets/chambres/chambre-1-lit-double-tapis.webp',
         caption: 'Chambre 1 — Grand lit double, tête de lit en nattage artisanal, banquette traditionnelle et tapis margoum'
       }
     ],
     2: [
       {
-        src: 'images/chambres/chambre-2-lit-fer-forge-applique.webp',
+        src: 'assets/chambres/chambre-2-lit-fer-forge-applique.webp',
         caption: 'Chambre 2 — Grand lit double en fer forgé artisanal, chevets lumineux et applique orientale ajourée'
       },
       {
-        src: 'images/chambres/chambre-2-chambre-rideaux-jaunes.webp',
+        src: 'assets/chambres/chambre-2-chambre-rideaux-jaunes.webp',
         caption: 'Chambre 2 — Chambre sous voûte blanche, lit fer forgé et fenêtres aux rideaux jaunes chaleureux'
       },
       {
-        src: 'images/chambres/chambre-2-commode-chaises-fer.webp',
+        src: 'assets/chambres/chambre-2-commode-chaises-fer.webp',
         caption: 'Chambre 2 — Vue d’ensemble avec commode traditionnelle peinte et chaises en fer forgé'
       }
     ]
